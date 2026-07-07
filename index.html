@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><title>4D Explorer</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<style>
+ body{margin:0;overflow:hidden;background:#0b0e14;font-family:system-ui,sans-serif}
+ .panel{position:fixed;font-size:12px;color:#dfe6ee;background:rgba(10,13,20,.72);
+        border:1px solid #2a3242;border-radius:8px;padding:10px 14px;line-height:1.55}
+ #help{left:12px;top:12px;max-width:295px}
+ #hud{left:12px;bottom:12px;white-space:pre;font-family:ui-monospace,monospace;pointer-events:none}
+</style>
+<script type="importmap">{"imports":{
+ "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+ "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<div id="help" class="panel"><b>4D Explorer</b><br>
+ Drag: orbit camera · <b>Shift+drag: rotate XW/YW</b> · Ctrl+drag: XY/ZW<br>
+ Hold Q/A W/S E/D: rotate XW / YW / ZW · [ ]: move slice plane<br>
+ Space: pause · . : step frame · R: reset rotation · Ctrl+Z / Ctrl+Y: undo/redo<br>
+ Axes: <span style="color:#ff5555">X</span>
+ <span style="color:#55ff7f">Y</span>
+ <span style="color:#5599ff">Z</span>
+ <span style="color:#ff55ff">W</span>
+ &mdash; the slice view shows the true 3D cross-section at w = w&#8320;.</div>
+<div id="hud" class="panel"></div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

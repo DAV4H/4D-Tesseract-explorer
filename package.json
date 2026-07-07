@@ -1,0 +1,14 @@
+{
+  "name": "4d-explorer",
+  "version": "0.1.0",
+  "description": "Interactive, mathematically exact simulation of four-dimensional Euclidean space",
+  "type": "module",
+  "scripts": {
+    "start": "http-server -p 8080 -c-1 .",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "vitest": "^1.6.0"
+  }
+}

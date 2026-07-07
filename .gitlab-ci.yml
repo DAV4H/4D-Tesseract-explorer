@@ -1,0 +1,39 @@
+# Security scanning (SAST + secret detection) plus unit tests and Pages deploy.
+stages:
+- test
+- secret-detection
+- deploy
+
+include:
+- template: Security/SAST.gitlab-ci.yml
+- template: Security/Secret-Detection.gitlab-ci.yml
+
+variables:
+  SECRET_DETECTION_ENABLED: 'true'
+
+sast:
+  stage: test
+
+secret_detection:
+  stage: secret-detection
+
+unit_tests:
+  stage: test
+  image: node:20
+  script:
+    - npm install
+    - npm test
+
+# Deploys the static app to GitLab Pages on the default branch.
+pages:
+  stage: deploy
+  image: alpine:latest
+  script:
+    - mkdir -p public
+    - cp index.html public/
+    - cp -r src public/src
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
