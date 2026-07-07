@@ -1,5 +1,5 @@
 # 4D Tesseract Explorer
-
+![4D Tesseract Explorer](assets/screenshot4d.png)
 Interactive visualization of four-dimensional geometry built for learning and exploration.
 
 ## Features
