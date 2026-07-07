@@ -1,45 +1,51 @@
-# 4D Explorer
+# 4D Tesseract Explorer
 
-An interactive, mathematically exact simulation of four-dimensional Euclidean space.
+Interactive visualization of four-dimensional geometry built for learning and exploration.
 
-## Run
+## Features
 
-Serve the folder statically and open `index.html`:
+- Interactive 4D Tesseract visualization
+- Real-time rotations in all six 4D rotation planes
+- Multiple projection modes
+- Cross-section (hyperplane slicing)
+- Adjustable rotation speeds
+- Interactive controls
+- Browser-based application (no installation required for users)
+
+## Live Demo
+
+https://dav4h.github.io/4D-Tesseract-explorer/
+
+## Technologies
+
+- JavaScript (ES Modules)
+- Three.js
+- HTML5
+- WebGL
+
+## Running Locally
 
 ```bash
-npx serve .
+npm install
+npm start
 ```
 
-Or open `index.html` directly in a modern browser (WebGL2 required).
+## Screenshots
 
-## Features (Phase 1)
+(Add screenshots here)
 
-- **True SO(4) rotations** in all six planes (XY, XZ, YZ, XW, YW, ZW) with periodic Gram-Schmidt re-orthonormalization; the live rotation matrix is displayed in the HUD.
-- **Exact regular polytopes**: tesseract (8-cell), pentachoron (5-cell), 16-cell, 24-cell, 600-cell (golden-ratio construction), hypersphere S3 grid, Clifford torus. Edges derived by minimal pairwise distance (correct for regular polytopes).
-- **Projections**: 4D perspective `d/(d-w)`, orthographic, oblique parallel, and stereographic from S3, with smoothstep-blended animated transitions and adjustable view distance.
-- **Cross-sections**: exact edge-hyperplane intersections at `w = w0`, rendered as the true 3D slice (convex hull for convex polytopes), with animated hyperslicing and ghost projection overlay.
-- **Interaction**: orbit camera, Shift+drag for XW/YW rotation, Ctrl+drag for XY/ZW, held keys Q/A W/S E/D, W-slider, pause, frame stepping, undo/redo, reset.
-- **I/O**: PNG screenshots, WebM recording, JSON project save/load.
+## Roadmap
 
-## Controls
+- Improve rendering quality
+- Add more 4D polytopes
+- Better educational explanations
+- Performance optimizations
+- VR support
 
-| Input | Action |
-|---|---|
-| Drag | Orbit camera |
-| Shift + drag | Rotate XW / YW |
-| Ctrl + drag | Rotate XY / ZW |
-| Q/A, W/S, E/D (hold) | Rotate XW / YW / ZW |
-| `[` / `]` | Move slicing hyperplane |
-| Space | Pause |
-| `.` | Step one frame |
-| R | Reset rotation |
-| Ctrl+Z / Ctrl+Y | Undo / redo |
+## Acknowledgements
 
-## Roadmap (Phase 2+)
+This project was developed with extensive assistance from AI tools. The project direction, feature planning, testing, iteration, and publication were managed by the repository owner.
 
-- TypeScript module split (`math4/`, `geometry/`, `projection/`, `slicing/`, `ui/`) with React dockable panels and unit tests (rotation orthogonality, edge counts 32/10/24/96/720, slice topology)
-- 120-cell, facet-shaded solid rendering with 4D normals, hypercube unfolding/nets
-- WebGPU compute path for transformation and marching-tetrahedra slicing
-- Educational mode with guided lessons and quizzes; timeline/keyframe animation editor
-- Experimental 4D rigid-body physics (clearly flagged as speculative)
-- Gamepad/touch/VR input, plugin and scripting API
+## License
+
+MIT
